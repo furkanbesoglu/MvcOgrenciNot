@@ -1,0 +1,21 @@
+﻿@model MvcOgrenciNot.Models.Entity.Kulupler
+@{
+    ViewBag.Title = "KulupEkle";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h2>Kulüp Ekle Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <div style="margin-top:15px;">
+        <label>Kulüp Adı</label>
+        @Html.TextBoxFor(x => x.KulupAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+        <label>Kontenjan</label>
+        @Html.TextBoxFor(x => x.KulupKontenjan, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+       <button class="btn btn-warning">Kulüp Ekle</button>
+    </div>
+</form>

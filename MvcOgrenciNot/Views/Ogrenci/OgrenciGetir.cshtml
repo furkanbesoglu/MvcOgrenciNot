@@ -1,0 +1,41 @@
+﻿@model MvcOgrenciNot.Models.Entity.Ogrenciler
+@{
+    ViewBag.Title = "OgrenciGetir";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("Guncelle", "Ogrenci", FormMethod.Post))
+{
+
+    <div style="margin-top:15px;">
+        <label>Öğrenci Adı</label>
+        @Html.TextBoxFor(x => x.OgrenciAD, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>ÖğrenciSoyadı</label>
+        @Html.TextBoxFor(x => x.OgrenciSoyad, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Öğrenci Cinsiyet</label>
+        @Html.TextBoxFor(x => x.OgrenciCinsiyet, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Öğrenci Kulüp</label>
+        @Html.DropDownListFor(o => o.Kulupler.KulupID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Öğrenci Fotoğraf</label>
+        @Html.TextBoxFor(x => x.OgrenciFoto, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.OgrenciID)
+
+    <div style="margin-top:15px;">
+       <button class="btn btn-warning">Öğrenci Güncelle</button>
+    </div>
+}
+
+

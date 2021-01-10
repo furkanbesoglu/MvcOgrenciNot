@@ -1,0 +1,23 @@
+﻿@model MvcOgrenciNot.Models.Entity.Kulupler
+@{
+    ViewBag.Title = "KulupGetir";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("Guncelle", "Kulupler", FormMethod.Post))
+{
+    <div>
+        <label>Kulüp Adı</label>
+        @Html.TextBoxFor(x => x.KulupAD, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Kulüp Kontenjan</label>
+        @Html.TextBoxFor(x => x.KulupKontenjan, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m=>m.KulupID)
+    <br />
+    <button class="btn btn-warning">Kulüp Güncelle</button>
+}
+
+

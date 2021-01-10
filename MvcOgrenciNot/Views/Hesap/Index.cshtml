@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h2>Hesap Makinesi</h2>
+<form class="form-group" method="post">
+    <div style="margin-top:15px;">
+        <label>Sınav 1</label>
+        <input type="text" name="sinav1" id="sinav1" class="form-control" />
+    </div>
+    <div style="margin-top:15px;">
+        <label>Sınav 2</label>
+        <input type="text" name="sinav2" id="sinav2" class="form-control" />
+    </div>
+    <div style="margin-top:15px;">
+        <label>Sınav 3</label>
+        <input type="text" name="sinav3" id="sinav3" class="form-control" />
+    </div>
+    <div style="margin-top:15px;">
+        <label>Proje</label>
+        <input type="text" name="proje" id="proje" class="form-control" />
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-warning">Hesapla</button>
+    </div>
+    <div style="margin-top:15px;">
+        <label>Sonuc : @ViewBag.dgr</label>
+    </div>
+</form>
+

@@ -1,0 +1,17 @@
+﻿@model MvcOgrenciNot.Models.Entity.Dersler
+@{
+    ViewBag.Title = "DersEkle";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h2>Ders Ekle Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <div style="margin-top:15px;">
+        <label>Ders Adı</label>
+        @Html.TextBoxFor(x => x.DersAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px;">
+       <button class="btn btn-warning">Ders Ekle</button>
+    </div>
+</form>

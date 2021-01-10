@@ -1,0 +1,33 @@
+﻿@model MvcOgrenciNot.Models.Entity.Ogrenciler
+@{
+    ViewBag.Title = "OgrenciEkle";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h2>Öğrenci Ekle Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <div>
+        <label>Öğrenci Adı:</label>
+        <input type="text" name="OgrenciAD" class="form-control" />
+    </div>
+    <div>
+        <label>Öğrenci Soyadı:</label>
+        <input type="text" name="OgrenciSoyad" class="form-control" />
+    </div>
+    <div>
+        <label>Öğrenci Cinsiyet:</label>
+        <input type="text" name="OgrenciCinsiyet" class="form-control" />
+    </div>
+    <div>
+        <label>Kulüp ID:</label>
+        @Html.DropDownListFor(o => o.Kulupler.KulupID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Öğrenci Fotoğraf:</label>
+        <input type="text" name="OgrenciFoto" class="form-control" />
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-info">Öğrenci Ekle</button>
+    </div>
+</form>

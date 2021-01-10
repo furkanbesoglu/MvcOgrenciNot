@@ -1,0 +1,29 @@
+﻿@using MvcOgrenciNot.Models.Entity;
+@model List<Kulupler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<h2>Kulüpler Listesi</h2>
+<br />
+<table class="table table-bordered">
+     <tr>
+         <th>Kulüp ID</th>
+         <th>Kulüp Adı</th>
+         <th>Kulüp Kontenjan</th>
+         <th>Kulüp Güncelle</th>
+         <th>Kulüp Sil</th>
+     </tr>
+    @foreach (var klp in Model)
+    {
+        <tr>
+            <th>@klp.KulupID</th>
+            <td>@klp.KulupAD</td>
+            <td>@klp.KulupKontenjan</td>
+            <td><a href="/Kulupler/KulupSil/@klp.KulupID" class="btn btn-danger">Kulüp Sil</a></td>
+            <td><a href="/Kulupler/KulupGetir/@klp.KulupID" class="btn btn-success">Kulüp Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kulupler/KulupEkle/" class="btn btn-primary">Yeni Kulüp Ekle</a>

@@ -1,0 +1,17 @@
+﻿@model MvcOgrenciNot.Models.Entity.Dersler
+@{
+    ViewBag.Title = "DersGetir";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Guncelle", "Dersler", FormMethod.Post))
+{
+    <div>
+        <label>Ders Adı</label>
+        @Html.TextBoxFor(x=>x.DersAD, new { @class = "form-control" })
+    </div> 
+    @Html.HiddenFor(m => m.DersID)
+    <br />
+    <button class="btn btn-warning">Ders Güncelle</button>
+}

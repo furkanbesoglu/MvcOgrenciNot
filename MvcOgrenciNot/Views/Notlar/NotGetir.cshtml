@@ -1,0 +1,62 @@
+﻿@model MvcOgrenciNot.Models.Entity.Notlar
+@{
+    ViewBag.Title = "NotGetir";
+    Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("NotGetir", "Notlar", FormMethod.Post))
+{
+
+    <div style="margin-top:15px;">
+        <label>Ders Adı</label>
+        @Html.TextBoxFor(x => x.DersID, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Öğrenci Adı</label>
+        @Html.TextBoxFor(x => x.OgrenciID, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Sınav 1</label>
+        @Html.TextBoxFor(x => x.Sinav1, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Sınav 2</label>
+        @Html.TextBoxFor(x => x.Sinav2, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Sınav 3</label>
+        @Html.TextBoxFor(x => x.Sinav3, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Proje</label>
+        @Html.TextBoxFor(x => x.Proje, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Ortalama</label>
+        @Html.TextBoxFor(x => x.Ortalama, new { @Value = @ViewBag.dgr, @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <label>Durum</label>
+        @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.NotID)
+
+    <div style="margin-top:15px;">
+        <button type="submit" name="İslem" value="Hesapla" class="btn btn-default">Hesapla</button>
+        <br />
+        <br />
+        <button type="submit" name="İslem" value="Guncelle" class="btn btn-warning">Güncelle</button>
+        <br />
+
+    </div>
+
+
+}
